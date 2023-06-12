@@ -6,6 +6,7 @@
     <stock>50</stock>
     <status>1</status>
   </product>
+
   <product>
     <id>20</id>
     <name>HTC</name>
@@ -13,6 +14,7 @@
     <stock>35</stock>
     <status>0</status>
   </product>
+
   <product>
     <id>23</id>
     <name>Nokia</name>
