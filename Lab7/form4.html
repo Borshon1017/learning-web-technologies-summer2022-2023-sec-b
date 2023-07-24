@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend><b>Date of Birth</b></legend>
+        &nbsp; &nbsp;  dd &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;      mm  &nbsp; &nbsp;    yyyy
+        <br>
+        <input type="text" name="day" id="day" size="1"> / <input type="text" name="month" id="month" size="1"> /<input type="text" name="year" id="year" size="1"> 
+        <hr>
+
+        <button onclick="validateForm()">Submit</button>
+    </fieldset>
+
+    <script>
+        function validateForm() {
+            let day = document.getElementById("day").value;
+            let month = document.getElementById("month").value;
+            let year = document.getElementById("year").value;
+
+            if (day === "" || month === "" || year === "") {
+                alert("Fields cannot be empty.");
+                return;
+            }
+
+            for (let i = 0; i < day.length; i++) {
+                if (!checkChar(day[i])) {
+                    alert("Day can only contain digits.");
+                    return;
+                }
+            }
+            for (let i = 0; i < month.length; i++) {
+                if (!checkChar(month[i])) {
+                    alert("Month can only contain digits.");
+                    return;
+                }
+            }
+            for (let i = 0; i < year.length; i++) {
+                if (!checkChar(year[i])) {
+                    alert("Year can only contain digits.");
+                    return;
+                }
+            }
+
+            if (day > 31 || day < 1) {
+                alert("Invalid day");
+                return;
+            }
+
+            if (month > 12 || month < 1) {
+                alert("Invalid month");
+                return;
+            }
+
+            if (year.length !== 4) {
+                alert("Invalid year");
+                return;
+            }
+
+           
+            alert("Form submitted successfully!");
+          
+        }
+
+        function checkChar(ch) {
+            return ch >= '0' && ch <= '9';
+        }
+    </script>
+</body>
+</html>

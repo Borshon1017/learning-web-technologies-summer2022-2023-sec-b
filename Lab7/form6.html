@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <label for="Blood">Blood Group</label>
+    <select id="Blood">
+        <option value="option1">B+</option>
+        <option value="option2" >A+</option>
+		<option value="option0" selected></option>
+        <option value="option3">O+</option>
+        <option value="option4">AB+</option>
+    </select>
+    <hr>
+    <button onclick="validateForm()">Submit</button>
+
+    <script>
+        function validateForm() {
+            let selectedOption = document.getElementById("Blood").value;
+
+            if (selectedOption === "option0") {
+                alert("Please select a Blood Group.");
+            } else {
+                alert("Form submitted successfully!");
+            }
+        }
+    </script>
+</body>
+</html>

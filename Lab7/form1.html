@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    Name  <br><br>
+    <input type="text" id="name"> <br><br>
+    <button onclick="checkName()">Submit</button>
+    <h3 id="message"></h3>
+    <script>
+        function checkName(){
+            let name = document.getElementById('name').value;
+            let nameLen = name.split(' ');
+
+            if(!name) alert("name can not be empty");
+            else if(nameLen.length < 2) alert("name has to contain atleast two words");
+            if(checkFirstChar(name[0])){}
+            else alert("name must start with a letter");
+            for(let i=0; i<name.length; i++){
+                if(checkChar(name[i])){}
+                else alert("name can only contain a-z or A-Z or dot or dash");
+            }  
+        }
+        function checkChar(ch){
+            if(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch == '.' || ch == '_' || ch == ' ') return true;
+        }
+        function checkFirstChar(ch){
+            if(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') return true;
+        }
+        
+    </script>
+</body>
+</html>
